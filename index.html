@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <script src="app.js" defer></script>
+
+    <title>Newsletter sign-up form</title>
+    <main class="container">
+      <article class="card">
+        <picture>
+          <source
+            srcset="assets/images/illustration-sign-up-desktop.svg"
+            media="(min-width: 1200px)"
+          />
+
+          <source
+            srcset="assets/images/illustration-sign-up-tablet.svg"
+            media="(min-width: 768px)"
+          />
+
+          <img
+            class="card-img"
+            src="assets/images/illustration-sign-up-mobile.svg"
+            alt="Illustration Signup"
+          />
+        </picture>
+
+        <section class="content">
+          <h1 class="heading-text">Stay updated!</h1>
+          <p class="description">
+            Join 60,000+ product managers receiving monthly updates on:
+          </p>
+          <ul class="features">
+            <li class="feature">Product discovery and building what matters</li>
+            <li class="feature">Measuring to ensure updates are a success</li>
+            <li class="feature">And much more!</li>
+          </ul>
+
+          <form class="form" id="sign-up-form" novalidate>
+            <div class="field">
+              <div class="label-container">
+                <label for="email">Email address</label
+                ><span class="email-error-msg"></span>
+              </div>
+              <input
+                class="field-input"
+                name="email"
+                type="text"
+                placeholder="email@company.com"
+              />
+            </div>
+
+            <button class="sign-up-button btn" type="submit">
+              Subscribe to monthly newsletter
+            </button>
+          </form>
+        </section>
+      </article>
+
+      <section class="thank-you-section hidden">
+        <div class="content">
+          <img
+            src="assets/images/icon-success.svg"
+            alt="Descriptive success Icon"
+            class="success-icon"
+          />
+          <h2 class="heading-text">Thanks for subscribing!</h2>
+          <p class="success-msg">
+            A confirmation email has been sent to
+            <strong class="user-email">ash@loremcompany.com</strong>. Please
+            open it and click the button inside to confirm your subscription.
+          </p>
+          <button type="button" class="btn dismiss-btn">Dismiss message</button>
+        </div>
+      </section>
+    </main>
+  </head>
+  <body>
+    <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  </body>
+</html>

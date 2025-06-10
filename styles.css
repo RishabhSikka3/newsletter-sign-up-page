@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  /* Colors */
+  --red: hsl(4, 100%, 67%);
+  --blue-800: hsl(234, 29%, 20%);
+  --blue-700: hsl(235, 18%, 26%);
+  --grey: hsl(0, 0%, 58%);
+  --white: hsl(0, 0%, 100%);
+  --gradient-color: linear-gradient(rgb(255, 106, 58), rgb(255, 82, 123));
+  --input-error-background: rgb(255, 97, 85, 0.3);
+
+  /* Font */
+  --primary-font: "Roboto", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-size-paragraph: 16px;
+
+  /* Shadows*/
+  --card-shadow: 0px 15px 60px 0px rgba(0, 0, 0, 0.25);
+  --btn-shadow: 0px 10px 10px 0px rgb(255, 106, 58, 0.5);
+
+  /* Outlines */
+  --btn-outline: 2px solid rgb(255, 82, 123);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--primary-font);
+  font-size: 16px;
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
+  letter-spacing: 0px;
+  color: var(--blue-800);
+  background-color: var(--blue-700);
+}
+
+/* Buttons Start */
+
+.btn {
+  padding: 1rem 3rem;
+  color: var(--white);
+  background-color: var(--blue-800);
+  font-weight: var(--font-weight-bold);
+  border-radius: 0.5rem;
+  border: none;
+  transition: all 0.2s ease-in;
+}
+
+.btn:hover {
+  background: var(--gradient-color);
+  box-shadow: var(--btn-shadow);
+}
+
+.btn:focus,
+.btn:focus-visible {
+  background: var(--gradient-color);
+  outline: var(--btn-outline);
+}
+/* Buttons End */
+
+.heading-text {
+  font-size: clamp(2rem, (1.8rem + 1vw), 32rem);
+  line-height: 100%;
+  letter-spacing: 0px;
+  font-weight: var(--font-weight-bold);
+  color: var(--blue-800);
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: var(--white);
+  box-shadow: var(--card-shadow);
+  max-width: 400px;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.card.hidden {
+  display: none;
+}
+
+.card .card-img {
+  inline-size: 100%;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 2.5rem;
+}
+
+.card .content {
+  padding: 1.5rem;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 24px;
+}
+
+.content .features {
+  position: relative;
+  list-style: none;
+  list-style-position: outside;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.features .feature {
+  position: relative;
+  padding-left: 2.3rem;
+}
+
+.features .feature::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10%;
+  width: 21px;
+  height: 21px;
+  background-image: url("assets/images/icon-list.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.form {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.form .field {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 8px;
+}
+
+.label-container {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.5;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.label-container .email-error-msg {
+  color: var(--red);
+}
+
+.field .field-input {
+  padding: 1.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--grey);
+}
+
+.field .field-input::placeholder {
+  color: var(--grey);
+}
+
+.field .field-input.error {
+  background-color: var(--input-error-background);
+  color: var(--red);
+  border: 1px solid var(--red);
+}
+
+.field .field-input:focus.error {
+  border: 2px solid var(--red);
+}
+
+.form .sign-up-button {
+  width: 100%;
+  text-align: center;
+}
+
+.thank-you-section {
+  min-height: 100vh;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thank-you-section .content {
+  margin: auto;
+  width: 85%;
+  height: 30rem;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: start;
+  gap: 2rem;
+}
+
+.thank-you-section.hidden {
+  display: none;
+}
+
+.dismiss-btn {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* Media Queries */
+@media (min-width: 48rem) {
+  .container {
+    padding: 5rem 2rem;
+  }
+  .card {
+    padding: 2.5rem;
+    border-radius: 2.25rem;
+    max-width: 600px;
+  }
+
+  .card .content {
+    padding: 0;
+  }
+
+  .content .features {
+    margin-bottom: 0;
+  }
+
+  .form {
+    gap: 1rem;
+    margin: 0;
+  }
+
+  .thank-you-section {
+    min-height: auto;
+    max-width: 40rem;
+    border-radius: 2.25rem;
+  }
+
+  .thank-you-section .content {
+    padding: 4rem;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 75rem) {
+  .card {
+    max-width: 910px;
+    padding: 2rem;
+    flex-flow: row-reverse wrap;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .card .card-img {
+    margin: 0;
+    align-self: stretch;
+    flex: 1;
+  }
+
+  .card .content {
+    flex: 2;
+    gap: 2rem;
+  }
+}

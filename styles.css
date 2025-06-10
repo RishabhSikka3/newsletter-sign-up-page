@@ -173,10 +173,6 @@ html {
   border: 1px solid var(--red);
 }
 
-.field .field-input:focus.error {
-  border: 2px solid var(--red);
-}
-
 .form .sign-up-button {
   width: 100%;
   text-align: center;
